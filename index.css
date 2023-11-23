@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --fontf: 'Kdam Thmor Pro', sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    width: 1120px;
+    max-width: 100%;
+    background-color: #ddd;
+}
+
+input {
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    margin-left: -5px;
+    width: 200px;
+}
+
+header {
+    background-color: lightblue;
+    line-height: 20px;
+    margin: 0;
+    padding: 5px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+header .title {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+
+}
+
+header .mon {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    font-family: var(--fontf);
+    padding: 0 15px;
+}
+
+header .mon span {
+    font-size: 30px;
+    padding: 5px 1px;
+    color: rgb(230, 126, 145);
+}
+
+header .iconHeader {
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+    padding: 0 15px;
+}
+
+header .iconHeader i {
+    margin-right: 15px;
+    color: white;
+    transition: scale 0.3 ease-in-out;
+    cursor: pointer;
+}
+
+header .iconHeader i:hover {
+    scale: 1.2;
+}
+
+header .textInput {
+    display: flex;
+    align-items: center;
+}
+
+header .textInput .meo {
+    position: relative;
+    animation-name: move;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    border-radius: 50%;
+    margin-left: 0;
+
+}
+
+@keyframes move {
+    0% {
+        left: 0px;
+        top: 0px;
+    }
+
+    25% {
+        left: 200px;
+        top: 0px;
+    }
+
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+header .avt {
+    border: 3px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    height: 100vh;
+    border-top: 5px solid #ddd;
+}
+
+main .sidebar {
+    background-color: white;
+    border: 5px solid #ddd;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+main .mainMain {
+    padding: 20px;
+    border: 5px solid #ddd;
+    border-radius: 20px;
+    background-color: white;
+}
