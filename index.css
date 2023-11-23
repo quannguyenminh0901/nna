@@ -17,6 +17,11 @@ body {
     background-color: #ddd;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 input {
     outline: none;
     border: none;
@@ -146,7 +151,7 @@ main .mainMain {
 .traLoi {
     position: relative;
     animation-name: moves;
-    animation-duration: 1s;
+    animation-duration: 5s;
     animation-iteration-count: infinite;
 }
 
