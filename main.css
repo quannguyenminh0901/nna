@@ -7,7 +7,7 @@
 main {
     display: grid;
     grid-template-columns: 30% 70%;
-    height: 90vh;
+    height: 100vh;
     border-top: 8px solid var(--bg-color);
 }
 

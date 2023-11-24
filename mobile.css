@@ -1,0 +1,15 @@
+@media (max-width: 900px) {
+    .imgI2 {
+        display: none;
+    }
+}
+
+@media (max-width: 490px) {
+    header .textInput {
+        display: none;
+    }
+
+    .dn {
+        display: none;
+    }
+}
