@@ -1,0 +1,142 @@
+.post {
+    background-color: #eeebeb;
+    border-radius: 20px;
+}
+
+.profilePost {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profilePost .titlePost {
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    margin: 10px 0;
+}
+
+.profilePost .titlePost .avtP {
+    width: 64px;
+    height: 64px;
+    max-width: 100%;
+}
+
+.profilePost .titlePost .avtP .avtPost {
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profilePost .titlePost .title {
+    line-height: 15px;
+    font-size: large;
+    font-weight: 500;
+}
+
+.profilePost .titlePost .title h5 {
+    font-size: 18px;
+    margin: 0;
+    padding: 08px 15px;
+}
+
+.profilePost .titlePost .title p {
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    margin: 5px 0;
+}
+
+.profilePost .titlePost .title i {
+    margin: 0 5px;
+    font-size: 13px;
+}
+
+.more {
+    margin-left: auto;
+    padding-right: 20px;
+    font-size: 15px;
+}
+
+/* content post */
+
+.contentContent {
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.contentContent .imgCon {
+    height: 500px;
+    padding: 0 2px;
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all .3 linear;
+}
+
+.reactContent {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.reactContent .react {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 20px;
+}
+
+.reactContent .react .fa {
+    margin: 0 8px;
+}
+
+.reactContent .react .fa i {
+    margin: 0 -4px;
+    font-weight: 800;
+}
+
+.reactContent .cmt101 {
+    margin-left: auto;
+    padding: 0 20px;
+}
+
+/* react post */
+
+.reactPost {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+    padding: 15px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.reactPost div {
+    margin: 0 15px;
+    cursor: pointer;
+    transition: all .3 linear;
+    padding: 5px 8px;
+    background-color: transparent;
+    border-radius: 10px;
+    width: auto;
+}
+
+.reactPost div i {
+    margin: 0 10px;
+}
+
+.reLike:hover {
+    color: blue;
+}
+
+.reCmt:hover,
+.reLike:hover,
+.reShare:hover {
+    background-color: #ddd;
+}

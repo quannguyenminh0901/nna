@@ -18,15 +18,6 @@ main .sidebar {
     border-radius: 20px;
 }
 
-main .mainMain {
-    padding: 20px;
-    border-bottom: 5px solid var(--bg-color);
-    border-left: 5px solid var(--bg-color);
-    border-radius: 20px;
-    background-color: white;
-}
-
-
 /* Sidebar */
 .profile {
     position: sticky;
@@ -146,3 +137,55 @@ main .mainMain {
 }
 
 /* mainMain */
+
+main .mainMain {
+    flex-direction: column;
+    padding: 10px;
+    border-bottom: 5px solid var(--bg-color);
+    border-left: 5px solid var(--bg-color);
+    border-radius: 20px;
+    background-color: white;
+}
+
+/*canvas*/
+
+.heartCanvas {
+    flex: 1;
+    margin: 0 auto;
+    width: 800px;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    background-color: #2e2e2e;
+    border-radius: 20px;
+    border: 10px solid #ddd;
+    animation: colors 4s infinite reverse linear;
+}
+
+@keyframes colors {
+    50% {
+        border: 10px solid red;
+    }
+
+    100% {
+        border: 10px solid rgb(115, 234, 255);
+    }
+}
+
+/* moment */
+
+.moment {
+    margin-bottom: 10px;
+}
+
+.moment h4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    background-color: #ddd;
+}

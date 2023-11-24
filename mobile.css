@@ -12,4 +12,8 @@
     .dn {
         display: none;
     }
+
+    .heartCanvas {
+        height: 300px;
+    }
 }
