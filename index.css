@@ -7,14 +7,16 @@
 }
 
 :root {
+    --cl: #ffc7c3;
     --fontf: 'Kdam Thmor Pro', sans-serif;
+    --bg-color: #eceaea;
 }
 
 body {
     margin: 0 auto;
     width: 980px;
     max-width: 100%;
-    background-color: #ddd;
+    background-color: var(--bg-color);
 }
 
 a {
@@ -31,10 +33,10 @@ input {
 }
 
 header {
-    background-color: lightblue;
+    background-color: rgb(255, 51, 0);
     line-height: 20px;
     margin: 0;
-    padding: 5px 100px;
+    padding: 8px 0;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -42,27 +44,21 @@ header {
     border-bottom-right-radius: 20px;
 }
 
-header .title {
-    display: flex;
-    align-items: center;
-    margin-right: auto;
-
-}
 
 header .mon {
+    cursor: pointer;
     display: flex;
     align-items: center;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 600;
     color: white;
     font-family: var(--fontf);
-    padding: 0 15px;
+    padding: 0 5px;
 }
 
 header .mon span {
-    font-size: 30px;
-    padding: 5px 1px;
-    color: rgb(230, 126, 145);
+    padding: 5px 0px;
+    color: rgb(248, 182, 194);
 }
 
 header .iconHeader {
@@ -90,16 +86,13 @@ header .textInput {
 
 header .textInput .meo {
     position: relative;
-    animation-name: move;
-    animation-duration: 8s;
-    animation-iteration-count: infinite;
-    animation-direction: reverse;
+    animation: moveCat 8s linear infinite reverse;
     border-radius: 50%;
     margin-left: 0;
 
 }
 
-@keyframes move {
+@keyframes moveCat {
     0% {
         left: 0px;
         top: 0px;
@@ -111,77 +104,6 @@ header .textInput .meo {
     }
 
     100% {
-        left: 0px;
-        top: 0px;
-    }
-}
-
-header .avt {
-    border: 3px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
-}
-
-main {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    height: 100vh;
-    border-top: 5px solid #ddd;
-}
-
-main .sidebar {
-    background-color: white;
-    border: 5px solid #ddd;
-    padding: 20px;
-    border-radius: 20px;
-}
-
-main .mainMain {
-    padding: 20px;
-    border: 5px solid #ddd;
-    border-radius: 20px;
-    background-color: white;
-}
-
-.traLoi:hover {
-    scale: 1.1;
-
-}
-
-.traLoi {
-    position: relative;
-    animation-name: moves;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes moves {
-    0% {
-        background-color: red;
-        left: 0px;
-        top: 0px;
-    }
-
-    25% {
-        background-color: yellow;
-        left: 200px;
-        top: 0px;
-    }
-
-    50% {
-        background-color: blue;
-        left: 200px;
-        top: 200px;
-    }
-
-    75% {
-        background-color: green;
-        left: 0px;
-        top: 200px;
-    }
-
-    100% {
-        background-color: red;
         left: 0px;
         top: 0px;
     }
