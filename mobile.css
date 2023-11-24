@@ -1,7 +1,14 @@
+@media (max-width: 1030px) {
+    .contentContent .con {
+        display: none;
+    }
+}
+
 @media (max-width: 900px) {
     .imgI2 {
         display: none;
     }
+
 }
 
 @media (max-width: 490px) {
