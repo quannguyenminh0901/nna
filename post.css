@@ -61,6 +61,9 @@
 }
 
 /* content post */
+.titleContent {
+    padding: 5px 15px;
+}
 
 .contentContent {
     display: flex;
