@@ -1,0 +1,150 @@
+.post {
+    background-color: rgb(115, 234, 255);
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+.profilePost {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profilePost .titlePost {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    margin: 10px 0;
+}
+
+.profilePost .titlePost .avtP {
+    width: 48px;
+    height: 48px;
+    max-width: 100%;
+}
+
+.profilePost .titlePost .avtP .avtPost {
+    border-radius: 50%;
+    border: 3px solid #f55f5f;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profilePost .titlePost .title {
+    padding: 5px 0;
+    line-height: 1px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.profilePost .titlePost .title h5 {
+    font-size: 18px;
+    margin: 0;
+    padding: 08px 15px;
+}
+
+.profilePost .titlePost .title p {
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    margin: 5px 0;
+}
+
+.profilePost .titlePost .title i {
+    margin: 0 5px;
+    font-size: 13px;
+}
+
+.more {
+    margin-left: auto;
+    padding-right: 20px;
+    font-size: 15px;
+}
+
+/* content post */
+.titleContent {
+    padding: 5px 15px;
+}
+
+.contentContent {
+    background-color: rgb(146, 227, 241);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    width: 100%;
+}
+
+.contentContent a .imgCon {
+    height: 500px;
+    padding: 0 2px;
+    margin: 5px;
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all .3 linear;
+}
+
+.reactContent {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.reactContent .react {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 20px;
+}
+
+.reactContent .react .fa {
+    margin: 0 8px;
+}
+
+.reactContent .react .fa i {
+    margin: 0 -4px;
+    font-weight: 800;
+}
+
+.reactContent .cmt101 {
+    margin-left: auto;
+    padding: 0 20px;
+}
+
+/* react post */
+
+.reactPost {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+    padding: 15px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.reactPost .re {
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all .3 linear;
+    border-radius: 10px;
+    padding: 5px 15px;
+    border: 1px solid transparent;
+    width: auto;
+}
+
+.reactPost .re i {
+    margin-right: 5px;
+}
+
+.Love {
+    color: red;
+}
+
+.re:hover {
+    opacity: 0.7;
+    background-color: rgb(146, 227, 241);
+}
