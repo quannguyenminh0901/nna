@@ -12,11 +12,19 @@
 }
 
 body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+}
+
+section {
     margin: 0 auto;
     width: 980px;
     max-width: 100%;
-    background-color: var(--bg-color);
 }
+
+
 
 a {
     text-decoration: none;
@@ -105,5 +113,25 @@ header .textInput .meo {
     100% {
         left: 0px;
         top: 0px;
+    }
+}
+
+@keyframes moveS {
+    0% {
+        opacity: 0;
+        transform: translateY(-100vh);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(0vh);
     }
 }
