@@ -16,6 +16,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--bg-color);
+    background-image: url(../assets/images/canhdao.png);
+    background-repeat: no-repeat;
 }
 
 section {
