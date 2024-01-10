@@ -2,7 +2,7 @@ function createElementRandom() {
     let container = document.getElementById('container');
     let width = document.documentElement.clientWidth;
     let height = document.documentElement.clientHeight;
-    let count = 50;
+    let count = 60;
 
     for (let i = 0; i < count; i++) {
         let randomLeft = Math.floor(Math.random() * width);
