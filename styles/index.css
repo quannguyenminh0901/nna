@@ -73,19 +73,19 @@ header .mon span {
 header .iconHeader {
     display: flex;
     align-items: center;
-    margin: 0 15px;
+}
+
+header .iconHeader .imageIconHeader {
+    display: flex;
+    align-items: center;
     padding: 0 15px;
+    font-weight: 900;
+    border-left: 1px solid #fff;
 }
 
-header .iconHeader i {
-    margin-right: 15px;
-    color: white;
-    transition: scale 0.3 ease-in-out;
-    cursor: pointer;
-}
-
-header .iconHeader i:hover {
-    scale: 1.2;
+header .iconHeader .imageIconHeader img {
+    height: 25px;
+    margin-right: 5px;
 }
 
 header .textInput {
