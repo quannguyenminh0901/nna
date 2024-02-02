@@ -78,7 +78,6 @@ main {
     display: flex;
     align-items: center;
     margin: 0 15px;
-
 }
 
 .proTitle h5 {
@@ -222,4 +221,32 @@ canvas {
 .listImgs:hover {
     opacity: 0.8;
     box-shadow: 2px 2px rgba(0, 140, 186, 1);
+}
+
+.container {
+    display: block;
+    cursor: pointer;
+    float: right;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 32px;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: translate(0, 9px) rotate(-45deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, -9px) rotate(45deg);
 }
