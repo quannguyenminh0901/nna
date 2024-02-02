@@ -205,10 +205,15 @@ canvas {
     padding: 0 5px;
 }
 
-.listImg .listImgs {
-    border-radius: 20px;
+.listImg a {
     height: 450px;
+    width: 100%;
     margin: 0 20px;
+}
+
+.listImg a .listImgs {
+    border-radius: 20px;
+    height: 100%;
     width: 100%;
     object-fit: cover;
     cursor: pointer;
