@@ -26,8 +26,6 @@ section {
     max-width: 100%;
 }
 
-
-
 a {
     text-decoration: none;
     color: white;
@@ -44,8 +42,6 @@ input {
 header {
     background-color: rgb(115, 234, 255);
     line-height: 20px;
-    margin: 0;
-    padding: 8px 0;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -53,16 +49,14 @@ header {
     border-bottom-right-radius: 20px;
 }
 
-
 header .mon {
     cursor: pointer;
     display: flex;
     align-items: center;
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 600;
     color: white;
     font-family: var(--fontf);
-    padding: 0 5px;
 }
 
 header .mon span {
@@ -136,4 +130,14 @@ header .textInput .meo {
         opacity: 0;
         transform: translateY(0vh);
     }
+}
+
+.iconPhone {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+}
+
+.iconPhone i {
+    margin-right: 10px;
 }

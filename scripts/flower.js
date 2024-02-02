@@ -2,7 +2,7 @@ function createElementRandom() {
     let container = document.getElementById('container');
     let width = document.documentElement.clientWidth;
     let height = document.documentElement.clientHeight;
-    let count = 60;
+    let count = 80;
 
     for (let i = 0; i < count; i++) {
         let randomLeft = Math.floor(Math.random() * width);
@@ -19,7 +19,7 @@ function createElementRandom() {
         div.style.animation = 'moveS ' + timeAnimation + 's ease-in infinite';
 
         let img = document.createElement("img");
-        img.src = '../assets/images/hoa.png'; // Thay thế 'path_to_hoa.png' bằng đường dẫn thực tế của bạn
+        img.src = '../assets/images/hoa.png';
         img.style.width = '100%';
         img.style.height = '100%';
         img.style.objectFit = 'cover';
