@@ -444,7 +444,7 @@
   }
   audio{
     position: absolute;
-    z-index: 1000000000000;
+    z-index: 1;
     margin: 0 auto;
     width: 100%;
     bottom: 0;

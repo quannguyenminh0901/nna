@@ -257,7 +257,7 @@ function updateConfig(nextConfig) {
     configDidUpdate();
 }
 
-// Map config to various properties & apply side effects
+//Bản đồ cấu hình cho các thuộc tính khác nhau và áp dụng các tác dụng phụ
 function configDidUpdate() {
     const config = store.state.config;
 
@@ -277,14 +277,14 @@ function configDidUpdate() {
 // -----------
 
 const isRunning = (state = store.state) => !state.paused && !state.menuOpen;
-// Whether user has enabled sound.
+// Liệu người dùng đã kích hoạt âm thanh.
 const soundEnabledSelector = (state = store.state) => state.soundEnabled;
-// Whether any sounds are allowed, taking into account multiple factors.
+// Cho dù có bất kỳ âm thanh nào được phép, có tính đến nhiều yếu tố
 const canPlaySoundSelector = (state = store.state) => isRunning(state) && soundEnabledSelector(state);
-// Convert quality to number.
+// Chuyển đổi chất lượng thành số.
 const qualitySelector = () => +store.state.config.quality;
 const shellNameSelector = () => store.state.config.shell;
-// Convert shell size to number.
+// Chuyển đổi kích thước vỏ thành số.
 const shellSizeSelector = () => +store.state.config.size;
 const finaleSelector = () => store.state.config.finale;
 const skyLightingSelector = () => +store.state.config.skyLighting;
@@ -350,7 +350,7 @@ const nodeKeyToHelpKey = {
 };
 
 
-// Render app UI / keep in sync with state
+// Kết xuất ứng dụng ui / giữ đồng bộ với trạng thái
 const appNodes = {
     stageContainer: '.stage-container',
     canvasContainer: '.canvas-container',
@@ -392,17 +392,17 @@ const appNodes = {
     helpModalCloseBtn: '.help-modal__close-btn'
 };
 
-// Convert appNodes selectors to dom nodes
+// Chuyển đổi bộ chọn AppNodes thành các nút dom
 Object.keys(appNodes).forEach(key => {
     appNodes[key] = document.querySelector(appNodes[key]);
 });
 
-// Remove fullscreen control if not supported.
+// Loại bỏ điều khiển toàn màn hình nếu không được hỗ trợ.
 if (!fullscreenEnabled()) {
     appNodes.fullscreenFormOption.classList.add('remove');
 }
 
-// First render is called in init()
+// Kết xuất đầu tiên được gọi trong init ()
 function renderApp(state) {
     const pauseBtnIcon = `#icon-${state.paused ? 'play' : 'pause'}`;
     const soundBtnIcon = `#icon-sound-${soundEnabledSelector() ? 'on' : 'off'}`;
@@ -437,7 +437,7 @@ function renderApp(state) {
 
 store.subscribe(renderApp);
 
-// Perform side effects on state changes
+// Thực hiện tác dụng phụ đối với các thay đổi trạng thái
 function handleStateChange(state, prevState) {
     const canPlaySound = canPlaySoundSelector(state);
     const canPlaySoundPrev = canPlaySoundSelector(prevState);
@@ -464,7 +464,7 @@ function getConfigFromDOM() {
         skyLighting: appNodes.skyLighting.value,
         longExposure: appNodes.longExposure.checked,
         hideControls: appNodes.hideControls.checked,
-        // Store value as number.
+        // Lưu trữ giá trị dưới dạng số.
         scaleFactor: parseFloat(appNodes.scaleFactor.value)
     };
 };
@@ -479,7 +479,7 @@ appNodes.skyLighting.addEventListener('input', updateConfigNoEvent);
 appNodes.longExposure.addEventListener('click', () => setTimeout(updateConfig, 0));
 appNodes.hideControls.addEventListener('click', () => setTimeout(updateConfig, 0));
 appNodes.fullscreen.addEventListener('click', () => setTimeout(toggleFullscreen, 0));
-// Changing scaleFactor requires triggering resize handling code as well.
+// Thay đổi ScaleFactor yêu cầu kích hoạt thay đổi kích thước mã xử lý là tốt.
 appNodes.scaleFactor.addEventListener('input', () => {
     updateConfig();
     handleResize();
@@ -502,17 +502,17 @@ appNodes.helpModalOverlay.addEventListener('click', () => {
 
 
 
-// Constant derivations
+// Đạo hàm liên tục
 const COLOR_NAMES = Object.keys(COLOR);
 const COLOR_CODES = COLOR_NAMES.map(colorName => COLOR[colorName]);
-// Invisible stars need an indentifier, even through they won't be rendered - physics still apply.
+// Các ngôi sao vô hình cần một định danh, mặc dù chúng sẽ không được hiển thị - vật lý vẫn được áp dụng.
 const COLOR_CODES_W_INVIS = [...COLOR_CODES, INVISIBLE];
-// Map of color codes to their index in the array. Useful for quickly determining if a color has already been updated in a loop.
+// Bản đồ mã màu cho chỉ mục của họ trong mảng. Hữu ích để nhanh chóng xác định nếu một màu đã được cập nhật trong một vòng lặp.
 const COLOR_CODE_INDEXES = COLOR_CODES_W_INVIS.reduce((obj, code, i) => {
     obj[code] = i;
     return obj;
 }, {});
-// Tuples is a map keys by color codes (hex) with values of { r, g, b } tuples (still just objects).
+// Tuples là một khóa bản đồ theo mã màu (hex) với các giá trị của {r, g, b} Tuples (vẫn chỉ là các đối tượng).
 const COLOR_TUPLES = {};
 COLOR_CODES.forEach(hex => {
     COLOR_TUPLES[hex] = {
@@ -522,12 +522,12 @@ COLOR_CODES.forEach(hex => {
     };
 });
 
-// Get a random color.
+// Nhận một màu ngẫu nhiên.
 function randomColorSimple() {
     return COLOR_CODES[Math.random() * COLOR_CODES.length | 0];
 }
 
-// Get a random color, with some customization options available.
+// Nhận một màu ngẫu nhiên, với một số tùy chọn tùy chỉnh có sẵn.
 let lastColor;
 function randomColor(options) {
     const notSame = options && options.notSame;
@@ -535,7 +535,7 @@ function randomColor(options) {
     const limitWhite = options && options.limitWhite;
     let color = randomColorSimple();
 
-    // limit the amount of white chosen randomly
+    // Giới hạn số lượng màu trắng được chọn ngẫu nhiên
     if (limitWhite && color === COLOR.White && Math.random() < 0.6) {
         color = randomColorSimple();
     }
@@ -565,7 +565,7 @@ function makePistilColor(shellColor) {
     return (shellColor === COLOR.White || shellColor === COLOR.Gold) ? randomColor({ notColor: shellColor }) : whiteOrGold();
 }
 
-// Unique shell types
+// Các loại vỏ độc đáo
 const crysanthemumShell = (size = 1) => {
     const glitter = Math.random() < 0.25;
     const singleColor = Math.random() < 0.72;
@@ -594,21 +594,21 @@ const crysanthemumShell = (size = 1) => {
 
 
 const ghostShell = (size = 1) => {
-    // Extend crysanthemum shell
+    // Mở rộng vỏ cây crysanthemum
     const shell = crysanthemumShell(size);
-    // Ghost effect can be fast, so extend star life
+    // Hiệu ứng ma có thể nhanh, vì vậy hãy mở rộng cuộc sống ngôi sao
     shell.starLife *= 1.5;
-    // Ensure we always have a single color other than white
+    // Đảm bảo chúng tôi luôn có một màu khác ngoài màu trắng
     let ghostColor = randomColor({ notColor: COLOR.White });
-    // Always use streamers, and sometimes a pistil
+    // Luôn luôn sử dụng các bộ truyền phát, và đôi khi là một vũng nhụy hoa
     shell.streamers = true;
     const pistil = Math.random() < 0.42;
     const pistilColor = pistil && makePistilColor(ghostColor);
-    // Ghost effect - transition from invisible to chosen color
+    // Hiệu ứng ma - Chuyển từ vô hình sang màu được chọn
     shell.color = INVISIBLE;
     shell.secondColor = ghostColor;
-    // We don't want glitter to be spewed by invisible stars, and we don't currently
-    // have a way to transition glitter state. So we'll disable it.
+    // Chúng tôi không muốn long lanh được phun ra bởi những ngôi sao vô hình và hiện tại chúng tôi không
+    // Có một cách để chuyển đổi trạng thái long lanh. Vì vậy, chúng tôi sẽ vô hiệu hóa nó.
     shell.glitter = '';
 
     return shell;
